@@ -1,0 +1,50 @@
+.header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 25px;
+  padding: 20px 60px;
+  width: 1600px;
+  height: 200px;
+  border-radius: 75px;
+  background: linear-gradient(100deg, rgba(79,252,254,1) 19%,
+    rgba(85,108,210,1) 49%,
+    rgba(179,14,195,1) 93%);
+  box-shadow: 11px 6px 12px 17px rgba(0,0,0,0.52);
+
+  &_title {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 40px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    color: #ffffff;
+    font-weight: 700;
+  }
+
+  &_tdListCreate {
+    width: 415px;
+    margin: 15px;
+    padding: 15px;
+    border: 1px solid #000;
+    border-radius: 25px;
+    background: linear-gradient(280deg, rgba(79,252,254,1) 23%,
+      rgba(85,108,210,1) 60%,
+      rgba(179,14,195,1) 98%);
+    box-shadow: 11px 6px 12px 17px rgba(0,0,0,0.52);
+      &_text {
+        margin-bottom: 7px;
+        text-align: center;
+        font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+        font-size: 30px;
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        color: #ffffff;
+        font-weight: 500;
+      }
+      &_block {
+        margin-top: 15px;
+      }
+  }
+}
+

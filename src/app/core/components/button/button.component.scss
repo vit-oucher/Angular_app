@@ -1,0 +1,22 @@
+button {
+  margin-right: 15px;
+  padding: 8px 15px;
+  border: 1px solid #000;
+  border-radius: 20px;
+  background: #28e4ff;
+
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  line-height: 27px;
+  color: #000000;
+  text-align: center;
+  cursor: pointer;
+  transition: all .2s linear;
+}
+button:hover {
+  transition: all .2s linear;
+  background: #024a76;
+  cursor: pointer;
+}
