@@ -1,0 +1,42 @@
+h5 {
+  margin: 0;
+}
+
+.todo-card {
+  padding: 16px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(135, 222, 222, 0.92);
+  border: 1px solid #000;
+  border-radius: 15px;
+      &-change, &-delete {
+        width: 40px;
+        height: 40px;
+        object-fit: cover;
+        cursor: pointer;
+      }
+       &-date {
+         display: flex;
+         align-items: center;
+         & h5:first-child {
+           margin-right: 5px;
+         }
+       }
+  &-text{
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+    color: #000000;
+    font-weight: 300;
+  }
+&.finished {
+  background: #888888;
+    & .todo-card-text {
+      text-decoration: line-through;
+  }
+}
+
+}
+

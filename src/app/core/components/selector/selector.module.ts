@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { SelectorComponent } from './selector.component';
 import {MatFormFieldModule} from "@angular/material/form-field";
 import {MatSelectModule} from "@angular/material/select";
+import {FormsModule} from "@angular/forms";
 
 
 
@@ -16,7 +17,8 @@ import {MatSelectModule} from "@angular/material/select";
   imports: [
     CommonModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    FormsModule
   ]
 })
 export class SelectorModule { }
