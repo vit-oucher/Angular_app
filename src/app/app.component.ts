@@ -1,6 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {AppInterface} from "./interfaces/app.interface";
 import {TodoListService} from "./services/todo-list.service";
+import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
+import {ConfirmModalComponent} from "./core/components/modals/confirm-modal/confirm-modal.component";
+import {EditModalComponent} from "./core/components/modals/edit-modal/edit-modal.component";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +12,10 @@ import {TodoListService} from "./services/todo-list.service";
 })
 export class AppComponent implements OnInit {
   public todoList : AppInterface[]  = []
-  constructor(private TodoListService: TodoListService) {
+  constructor(
+    private TodoListService: TodoListService,
+    private dialog: MatDialog,
+  ) {
   }
 
   title = 'myfirstapp';
@@ -30,7 +36,32 @@ export class AppComponent implements OnInit {
   }
 
   public delTodo(todo: AppInterface): void {
-    this.TodoListService.deleteTodoById(todo.id);
-    this.todoList = this.TodoListService.getTodoList;
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = '300px';
+    dialogConfig.height = '200px';
+    dialogConfig.enterAnimationDuration = '200ms';
+    dialogConfig.exitAnimationDuration= '200ms';
+      const dialogRef = this.dialog.open(ConfirmModalComponent, dialogConfig);
+      dialogRef.afterClosed().subscribe( (result: boolean) => {
+        if (result) {
+          this.TodoListService.deleteTodoById(todo.id);
+          this.todoList = this.TodoListService.getTodoList;
+        }
+
+      })
+
+
+  }
+
+  public editTodo(todo: AppInterface): void {
+      const dialogConfig = new MatDialogConfig();
+
+    dialogConfig.width = '400px';
+    dialogConfig.height = '300px';
+    dialogConfig.enterAnimationDuration = '200ms';
+    dialogConfig.exitAnimationDuration= '200ms';
+
+    this.dialog.open(EditModalComponent, dialogConfig);
+
   }
 }

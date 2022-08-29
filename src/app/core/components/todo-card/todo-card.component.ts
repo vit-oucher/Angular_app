@@ -12,6 +12,7 @@ export class TodoCardComponent implements OnInit, OnChanges {
 
   @Output () changeTodoStatus: EventEmitter<void> = new EventEmitter<void>();
   @Output () deleteTodoEvent: EventEmitter<void> = new EventEmitter<void>();
+  @Output () editTodoEvent: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
@@ -23,6 +24,7 @@ export class TodoCardComponent implements OnInit, OnChanges {
 
   public editTodo():void {
     console.log('Card edited', this.todoCard );
+    this.editTodoEvent.emit();
   }
 
   public deleteTodo():void {
