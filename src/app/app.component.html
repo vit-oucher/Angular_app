@@ -1,14 +1,14 @@
 
 <div class="container-all">
-      <app-header></app-header>
+      <app-header (updatedEvent)="handleUpdate($event)"></app-header>
   <div class="section">
       <app-todo-card
         *ngFor="let todo of todoList; index as idx"
-        [isTodoFinished]="todo.isTodoFinished"
         [cardNumber]="idx + 1"
-        [cardText]="todo.cardText"
-        [dateOfCreation]="todo.dateOfCreation"
-        [DeadlineDate]="todo.DeadlineDate"
+        [todoCard]="todo"
+        (changeTodoStatus)="changeTodoStatus(todo)"
+        (deleteTodoEvent)="delTodo(todo)"
+
       ></app-todo-card>
   </div>
 </div>

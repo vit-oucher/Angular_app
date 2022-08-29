@@ -13,6 +13,20 @@ export class TodoListService {
       cardText: 'do homework',
       dateOfCreation : new Date(),
       DeadlineDate : new Date(),
+    },
+    {
+      isTodoFinished: false,
+      id: 2,
+      cardText: 'do homework js',
+      dateOfCreation : new Date(),
+      DeadlineDate : new Date(),
+    },
+    {
+      isTodoFinished: false,
+      id: 3,
+      cardText: 'do homework angular',
+      dateOfCreation : new Date(),
+      DeadlineDate : new Date(),
     }
   ];
 
@@ -21,4 +35,26 @@ export class TodoListService {
     return this.todoList;
   }
 
+  public set setNewTodo(todoText: string) {
+    const newTodo: AppInterface = {
+      isTodoFinished: false,
+      cardText: todoText,
+      dateOfCreation : new Date(),
+      DeadlineDate : new Date(),
+      id: Math.ceil(Math.random() * 1000),
+    }
+    this.todoList = [...this.todoList, newTodo];
+  }
+  public set setNewTodoStatusById(id: number) {
+    this.todoList = this.todoList.map((el: AppInterface) => {
+      return {
+        ...el,
+        isTodoFinished: el.id === id ? !el.isTodoFinished : el.isTodoFinished,
+      }
+    })
+  }
+  public deleteTodoById(id: number):void {
+    this.todoList = this.todoList.filter((el: AppInterface) => el.id !== id);
+
+  }
 }

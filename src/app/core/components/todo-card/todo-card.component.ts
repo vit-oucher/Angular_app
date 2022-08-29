@@ -1,4 +1,5 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output} from '@angular/core';
+import {AppInterface} from "../../../interfaces/app.interface";
 
 @Component({
   selector: 'app-todo-card',
@@ -6,13 +7,11 @@ import {Component, Input, OnChanges, OnInit} from '@angular/core';
   styleUrls: ['./todo-card.component.scss']
 })
 export class TodoCardComponent implements OnInit, OnChanges {
-  @Input() isTodoFinished : boolean = false;
   @Input() cardNumber : number = 0;
-  @Input() cardText : string = 'do homework';
-  @Input() dateOfCreation : Date = new Date();
-  @Input() DeadlineDate : Date = new Date();
+  @Input() todoCard!: AppInterface;
 
-
+  @Output () changeTodoStatus: EventEmitter<void> = new EventEmitter<void>();
+  @Output () deleteTodoEvent: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
@@ -23,14 +22,15 @@ export class TodoCardComponent implements OnInit, OnChanges {
   }
 
   public editTodo():void {
-    console.log('Card edited', this.cardText);
+    console.log('Card edited', this.todoCard );
   }
 
   public deleteTodo():void {
-    console.log('Card deleted', this.cardText);
+    console.log('Card deleted', this.todoCard );
+    this.deleteTodoEvent.emit();
   }
 
  public todoStatusChange(): void {
-    this.isTodoFinished = !this.isTodoFinished;
+    this.changeTodoStatus.emit();
   }
 }
