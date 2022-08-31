@@ -7,7 +7,7 @@ import {FormControl} from "@angular/forms";
   styleUrls: ['./input-box.component.scss']
 })
 export class InputBoxComponent implements OnInit {
- @Input() textControl: FormControl = new FormControl();
+ @Input() textControl: FormControl | any = new FormControl();
 
   constructor() { }
 

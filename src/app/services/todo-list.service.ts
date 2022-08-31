@@ -40,7 +40,6 @@ export class TodoListService {
       isTodoFinished: false,
       cardText: todoText,
       dateOfCreation : new Date(),
-      DeadlineDate : new Date(),
       id: Math.ceil(Math.random() * 1000),
     }
     this.todoList = [...this.todoList, newTodo];
@@ -56,5 +55,15 @@ export class TodoListService {
   public deleteTodoById(id: number):void {
     this.todoList = this.todoList.filter((el: AppInterface) => el.id !== id);
 
+  }
+
+  public updateTodoById(id:number,
+       newDates: {cardText: string, DeadlineDate: Date}
+  ): void {
+            this.todoList = this.todoList.map((el: AppInterface) =>
+              ({...el,
+                cardText: el.id === id ? newDates.cardText : el.cardText,
+                DeadlineDate: el.id === id ? newDates.DeadlineDate : el.DeadlineDate,
+            }));
   }
 }

@@ -3,5 +3,5 @@ export interface AppInterface {
   id: number;
   cardText: string;
   dateOfCreation: Date;
-  DeadlineDate: Date;
+  DeadlineDate?: Date;
 }

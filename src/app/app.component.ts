@@ -22,17 +22,17 @@ export class AppComponent implements OnInit {
 
 
   public ngOnInit(): void {
-    this.todoList = this.TodoListService.getTodoList;
+    this.initTodoList();
   }
 
   public handleUpdate(name: string): void {
     this.TodoListService.setNewTodo = name;
-    this.todoList = this.TodoListService.getTodoList;
+    this.initTodoList();
   }
 
   public changeTodoStatus(todo: AppInterface): void {
     this.TodoListService.setNewTodoStatusById = todo.id;
-    this.todoList = this.TodoListService.getTodoList;
+    this.initTodoList();
   }
 
   public delTodo(todo: AppInterface): void {
@@ -45,7 +45,7 @@ export class AppComponent implements OnInit {
       dialogRef.afterClosed().subscribe( (result: boolean) => {
         if (result) {
           this.TodoListService.deleteTodoById(todo.id);
-          this.todoList = this.TodoListService.getTodoList;
+          this.initTodoList();
         }
 
       })
@@ -56,12 +56,23 @@ export class AppComponent implements OnInit {
   public editTodo(todo: AppInterface): void {
       const dialogConfig = new MatDialogConfig();
 
-    dialogConfig.width = '400px';
-    dialogConfig.height = '300px';
+    dialogConfig.width = '550px';
+    dialogConfig.height = '500px';
     dialogConfig.enterAnimationDuration = '200ms';
-    dialogConfig.exitAnimationDuration= '200ms';
+    dialogConfig.exitAnimationDuration = '200ms';
+    dialogConfig.data = todo;
 
-    this.dialog.open(EditModalComponent, dialogConfig);
+    const dialogRef =  this.dialog.open(EditModalComponent, dialogConfig);
+    dialogRef.afterClosed().subscribe( (result) => {
+      if (result) {
+        this.TodoListService.updateTodoById(todo.id, result);
+        this.initTodoList();
+      }
+    })
 
+  }
+
+  private initTodoList(): void {
+    this.todoList = this.TodoListService.getTodoList;
   }
 }
