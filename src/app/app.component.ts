@@ -75,4 +75,8 @@ export class AppComponent implements OnInit {
   private initTodoList(): void {
     this.todoList = this.TodoListService.getTodoList;
   }
+
+ public filterTodo(): void {
+    this.todoList = this.TodoListService.getFinishedList();
+  }
 }

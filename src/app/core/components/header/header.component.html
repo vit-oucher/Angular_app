@@ -3,12 +3,13 @@
 
   <div class="header_groupbtn">
 
-    <app-button class="header_btn">All</app-button>
-    <app-button class="header_btn">Active</app-button>
-    <app-button class="header_btn">Finished</app-button>
+    <app-button (click)="showAll()" class="header_btn">All</app-button>
+    <app-button (click)="showActive()" class="header_btn">Active</app-button>
+    <app-button (click)="showFinished()" class="header_btn">Finished</app-button>
   </div>
 
-  <app-selector class="header_selector"></app-selector>
+  <app-selector (sortBYEvent)="sortTodo()"
+                class="header_selector"></app-selector>
 
   <div class="header_tdListCreate">
     <h4 class="header_tdListCreate_text"> Create new task: </h4>

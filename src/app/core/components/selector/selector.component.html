@@ -1,6 +1,16 @@
 
-<select class="selector">
-      <option class="option" value="All">All</option>
-      <option class="option" value="Active">Active</option>
-      <option class="option" value="Finished">Finished</option>
-</select>
+<!--<select class="selector">-->
+<!--      <option class="option" value="Title">Title</option>-->
+<!--      <option class="option" value="DeadlineDate">Deadline Date</option>-->
+<!--      <option class="option" value="Active">Active</option>-->
+<!--      <option class="option" value="Finished">Finished</option>-->
+<!--</select>-->
+
+<mat-form-field  appearance="fill">
+  <mat-label>Sort By : </mat-label>
+  <mat-select  [(ngModel)]="selectedValue" (selectionChange)="sortBy()" name="food">
+    <mat-option *ngFor="let val of valueTodo" [value]="val.value">
+      {{val.viewValue}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

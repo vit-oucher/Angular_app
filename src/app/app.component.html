@@ -1,6 +1,9 @@
 
 <div class="container-all">
-      <app-header (updatedEvent)="handleUpdate($event)"></app-header>
+      <app-header (updatedEvent)="handleUpdate($event)"
+                  (filterEvent)="filterTodo()"
+                    ></app-header>
+
   <div class="section">
       <app-todo-card
         *ngFor="let todo of todoList; index as idx"
@@ -9,6 +12,7 @@
         (changeTodoStatus)="changeTodoStatus(todo)"
         (deleteTodoEvent)="delTodo(todo)"
         (editTodoEvent)="editTodo(todo)"
+
 
       ></app-todo-card>
   </div>

@@ -1,9 +1,14 @@
+//mat-dialog-container::ng-deep {
+//  background: #f77cf9;
+//}
+
 .mat-dialog-content::ng-deep {
   display: block;
   margin: 0;
   padding: 0;
-  height: 100px;
+  height: 150px;
   overflow: auto;
+  //background: #f77cf9;
 }
 
 .mat-dialog-actions::ng-deep {
@@ -46,3 +51,5 @@ option:hover {
   display: none;
 
 }
+
+

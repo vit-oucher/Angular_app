@@ -1,38 +1,59 @@
-.selector {
+//.selector {
+//  height: 50px;
+//  padding: 10px;
+//  width: 245px;
+//  background: #41faff;
+//  border: 1px solid #000;
+//  border-radius: 12px;
+//
+//  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+//  font-size: 20px;
+//  font-weight: 700;
+//  letter-spacing: 1px;
+//  line-height: 27px;
+//  color: #000000;
+//  text-align: left;
+//  cursor: pointer;
+//
+//}
+//.option {
+//  height: 50px;
+//  padding: 10px;
+//  width: 245px;
+//  background: #41faff;
+//  border: 1px solid #000;
+//  border-radius: 12px;
+//  cursor: pointer;
+//  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+//  font-size: 25px;
+//  font-weight: 500;
+//  letter-spacing: 1px;
+//  line-height: 27px;
+//  color: #000000;
+//  text-align: left;
+//
+//}
+//.option:hover{
+//  cursor: pointer;
+//}
+
+mat-form-field::ng-deep  {
+  background: #28e4ff;
+    height: 50px;
+    width: 245px;
+    border: 1px solid #000;
+    border-radius: 12px;
+}
+.mat-select-panel::ng-deep {
+  background: #28e4ff;
+  //border: 1px solid #000;
+  //border-radius: 12px;
+}
+
+mat-option::ng-deep  {
   height: 50px;
-  padding: 10px;
   width: 245px;
-  background: #41faff;
+    background: #41faff;
   border: 1px solid #000;
   border-radius: 12px;
-
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 20px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  line-height: 27px;
-  color: #000000;
-  text-align: left;
-  cursor: pointer;
-
-}
-.option {
-  height: 50px;
-  padding: 10px;
-  width: 245px;
-  background: #41faff;
-  border: 1px solid #000;
-  border-radius: 12px;
-  cursor: pointer;
-  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
-  font-size: 25px;
-  font-weight: 500;
-  letter-spacing: 1px;
-  line-height: 27px;
-  color: #000000;
-  text-align: left;
-
-}
-.option:hover{
-  cursor: pointer;
 }

@@ -6,6 +6,8 @@ import {AppInterface} from "../interfaces/app.interface";
 })
 
 export class TodoListService {
+  private filteredList :  AppInterface[]  = [];
+
   private todoList : AppInterface[]  = [
     {
       isTodoFinished: false,
@@ -65,5 +67,34 @@ export class TodoListService {
                 cardText: el.id === id ? newDates.cardText : el.cardText,
                 DeadlineDate: el.id === id ? newDates.DeadlineDate : el.DeadlineDate,
             }));
+  }
+  public filterFinished(): void {
+    this.filteredList = this.todoList.filter((el: AppInterface) =>
+      el.isTodoFinished == true);
+  }
+  public getFinishedList() : AppInterface[] {
+    return this.filteredList;
+  }
+
+  public activeFil(): void{
+    this.filteredList = this.todoList.filter((el: AppInterface) =>
+      el.isTodoFinished == false);
+  }
+
+  public allTodo():void {
+    this.filteredList = this.todoList;
+  }
+
+  public sortByFinishedTodo():void {
+    this.filteredList = this.todoList.sort((a:any,b: any) => a.isTodoFinished < b.isTodoFinished ? 1 : -1 );
+  }
+  public sortByActiveTodo():void {
+    this.filteredList = this.todoList.sort((a:any,b: any) => a.isTodoFinished > b.isTodoFinished ? 1 : -1 );
+  }
+  public sortByDateTodo():void {
+    this.filteredList = this.todoList.sort((a:any,b: any) => a.DeadlineDate > b.DeadlineDate ? 1 : -1 );
+  }
+  public sortByTitleTodo():void {
+    this.filteredList = this.todoList.sort((a:any,b: any) => a.cardText > b.cardText ? 1 : -1 );
   }
 }
