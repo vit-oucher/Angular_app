@@ -1,0 +1,21 @@
+<mat-card [class.finished]="todoCard.isTodoFinished" class="todo-card">
+  <mat-slide-toggle [checked]="todoCard.isTodoFinished"
+                    (change)="todoStatusChange()">
+  </mat-slide-toggle>
+
+  <h5 class="todo-card-text"> {{cardNumber}} </h5>
+
+  <h5 class="todo-card-text"> {{todoCard.cardText}} </h5>
+
+  <div class="todo-card-date">
+    <h5 class="todo-card-text"> Date of Creation: </h5>
+    <h5 class="todo-card-text"> {{ todoCard.dateOfCreation | date : "dd.MM.YYYY" }} </h5>
+  </div>
+
+  <div class="todo-card-date">
+    <h5 class="todo-card-text"> Deadline Date: </h5>
+    <h5 class="todo-card-text"> {{ todoCard.DeadlineDate | date : "dd.MM.YYYY" }} </h5>
+  </div>
+  <img (click)="editTodo()" class="todo-card-change" src="assets/icons/Aqua_pencil.png" alt="change"/>
+  <img (click)="deleteTodo()" class="todo-card-delete" src="assets/icons/delete-213.png" alt="delete"/>
+</mat-card>

@@ -1,0 +1,18 @@
+
+.container-all {
+  padding-top: 25px;
+  height: 100vh;
+  justify-content: center;
+  background: linear-gradient(100deg, rgba(79,252,254,1) 19%,
+    rgba(85,108,210,1) 49%,
+    rgba(179,14,195,1) 93%);
+}
+
+.section {
+  width: 80%;
+  margin: 50px auto;
+  & app-todo-card {
+    display: block;
+    margin-bottom: 15px;
+  }
+}

@@ -1,0 +1,55 @@
+//mat-dialog-container::ng-deep {
+//  background: #f77cf9;
+//}
+
+.mat-dialog-content::ng-deep {
+  display: block;
+  margin: 0;
+  padding: 0;
+  height: 150px;
+  overflow: auto;
+  //background: #f77cf9;
+}
+
+.mat-dialog-actions::ng-deep {
+    padding: 10px 0;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 100px;
+    align-items: center;
+    box-sizing: content-box;
+}
+
+.mat-button {
+  width: 20px;
+  height: 35px;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  left: 450px;
+  border-radius: 50px;
+  //background: #ffffff;
+}
+
+.edit-input.example-form-field {
+  padding: 1px;
+  height: 75px;
+  width: 240px;
+  margin-right: 10px;
+  margin-left: 10px;
+  background: rgba(65, 250, 255, 0.58);
+  border-radius: 15px;
+  border: 1px solid #000;
+}
+option:hover {
+  cursor: pointer;
+}
+
+::ng-deep .mat-form-field-underline {
+  display: none;
+
+}
+
+

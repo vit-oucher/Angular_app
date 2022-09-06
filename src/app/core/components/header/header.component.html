@@ -1,0 +1,24 @@
+<header class="header">
+  <h1 class="header_title">TODO LIST</h1>
+
+  <div class="header_groupbtn">
+
+    <app-button (click)="showAll()" class="header_btn">All</app-button>
+    <app-button (click)="showActive()" class="header_btn">Active</app-button>
+    <app-button (click)="showFinished()" class="header_btn">Finished</app-button>
+  </div>
+
+  <app-selector (sortBYEvent)="sortTodo()"
+                class="header_selector"></app-selector>
+
+  <div class="header_tdListCreate">
+    <h4 class="header_tdListCreate_text"> Create new task: </h4>
+
+    <div class="header_tdListCreate_block">
+
+      <app-input-box class="header_tdListCreate_input" [textControl]="todoControl"></app-input-box>
+      <app-button (click)="todoControl.valid ? createTodo() : null" class="header_tdListCreate_btn">Create!</app-button>
+
+    </div>
+  </div>
+</header>

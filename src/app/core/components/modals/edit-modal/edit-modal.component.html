@@ -1,0 +1,13 @@
+<div class="full-container-edit">
+  <button (click)="close()" mat-button class="mat-button">X</button>
+  <h1 mat-dialog-title> Edit Current Todo: <b>{{ modalData.cardText }}</b></h1>
+  <div mat-dialog-content>
+    <app-input-box class="edit-input" [textControl]="formGroup.get('cardText')"></app-input-box>
+    <app-date-picker class="date-picker" [control]="formGroup.get('DeadlineDate')" [label]="'Deadline Date'"></app-date-picker>
+  </div>
+  <div mat-dialog-actions>
+    <app-button (click)="close()"> CANCEL </app-button>
+    <app-button (click)="formGroup.valid ? saveChanges() : null"> SAVE CHANGES </app-button>
+  </div>
+</div>
+
